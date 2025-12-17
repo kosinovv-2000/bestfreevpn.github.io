@@ -271,52 +271,62 @@
     .footer b{color:var(--text)}
     .small{font-size:12.5px}
 
-  /* ===== WHITE CARDS MODE ===== */
+ /* === Контрастные (светлые) карточки на тёмном фоне === */
+:root{
+  --card-bg:#ffffff;
+  --card-text:#0b0f12;
+  --card-muted:#39424b;
+  --card-line:rgba(0,0,0,.10);
+}
+
+/* сами карточки */
 .card{
-  background: #ffffff !important;
-  color: #0b0f12 !important;
-  border: none !important;
-  box-shadow: 0 20px 60px rgba(0,0,0,.35);
+  background: var(--card-bg) !important;
+  border: 1px solid var(--card-line) !important;
+  box-shadow: 0 18px 60px rgba(0,0,0,.55) !important;
 }
 
-.card .sub,
-.card .body{
-  color: #374151 !important;
+/* верх карточки */
+.card .name{ color: var(--card-text) !important; }
+.card .sub{ color: var(--card-muted) !important; }
+.card .body{ color: var(--card-muted) !important; }
+
+/* “плашки” внутри карточки */
+.pill{
+  color: rgba(0,0,0,.85) !important;
+  border: 1px solid rgba(0,0,0,.12) !important;
+  background: rgba(0,0,0,.04) !important;
 }
 
-.card .pill{
-  background: #f1f5f9 !important;
-  color: #0f172a !important;
-  border: 1px solid #e5e7eb !important;
-}
-
+/* низ карточки */
 .card .actions{
-  background: #f8fafc !important;
-  border-top: 1px solid #e5e7eb !important;
+  border-top: 1px solid rgba(0,0,0,.08) !important;
+  background: rgba(0,0,0,.03) !important;
 }
 
-.card .rank{
-  background: #0f172a !important;
-  color: #ffffff !important;
-  border: none !important;
+/* кнопки */
+.btn{
+  border: 1px solid rgba(0,0,0,.14) !important;
+  background: rgba(0,0,0,.04) !important;
+  color: var(--card-text) !important;
+}
+.btn:hover{ background: rgba(0,0,0,.07) !important; }
+
+.btn.primary{
+  border-color: rgba(0,0,0,.16) !important;
+  background: linear-gradient(135deg, rgba(110,231,255,.45), rgba(167,139,250,.40)) !important;
+  color: #081014 !important;
 }
 
-.card .rank.best{
-  background: linear-gradient(135deg, #2563eb, #7c3aed) !important;
+/* бейджи рейтинга */
+.rank{
+  color: rgba(0,0,0,.86) !important;
+  border: 1px solid rgba(0,0,0,.14) !important;
+  background: rgba(0,0,0,.04) !important;
 }
-
-.card .btn{
-  background: #0f172a !important;
-  color: #ffffff !important;
-  border: none !important;
-}
-
-.card .btn.primary{
-  background: linear-gradient(135deg, #2563eb, #7c3aed) !important;
-}
-
-.card .btn:hover{
-  opacity: .92;
+.best{
+  border-color: rgba(110,231,255,.75) !important;
+  background: rgba(110,231,255,.22) !important;
 }
 </style>
 </head>
